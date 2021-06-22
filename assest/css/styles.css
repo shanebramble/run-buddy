@@ -20,6 +20,8 @@ header {
     you can use the flex-direction property with a value of column. */
     display: flex;
     justify-content: space-between;
+    /* The flex-wrap property to instruct the container to let child elements break 
+    onto the next line when when they don't fit on one line. */
     flex-wrap: wrap;
 }
 
@@ -39,14 +41,28 @@ header nav {
     margin: 7px 0;
 }
 
-header nav ul li {
-    display: inline;
+header nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    /* So by default, justify-content follows the horizontal axis and align-items 
+    follows the vertical axis. However,if we were to change the value of flex-direction 
+    to column,then the main axis and the cross axis would be flipped. The justify-content 
+    property would thus follow the vertical axis (because it would become the main axis)
+    and align-items would follow the horizontal (or cross) axis. */
+
+    align-items: center;
+    list-style: none;
 }
 
 header nav ul li a {
     margin: 0 30px;
     font-weight: lighter;
-    font-size: 22px;
+
+    /*  viewport width: By setting the value to 1.55vw, we're telling the browser 
+        that the font's size should be roughly 1.55% of the window's overall width. 
+    */
+    font-size: 1.55vw;
 }
 
 footer {
