@@ -16,6 +16,11 @@ body {
 header {
     padding: 20px 35px;
     background-color: #39a6b2;
+    /* To change a flexbox from a row to a column layout,
+    you can use the flex-direction property with a value of column. */
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
 }
 
 header h1 {
@@ -23,7 +28,6 @@ header h1 {
     font-size: 36px;
     color: #fce138;
     margin: 0;
-    display: inline;
 }
 
 header a {
@@ -32,7 +36,6 @@ header a {
 }
 
 header nav {
-    float: right;
     margin: 7px 0;
 }
 
@@ -91,10 +94,10 @@ section {
 }
 
 .hero-cta {
-    margin-left: 351px;
+    /* margin-left: 351px;
     text-align: right;
     display: inline-block;
-    width: 31%;
+    width: 31%; */
 }
 
 .hero-cta h2 {
