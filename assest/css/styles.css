@@ -69,17 +69,18 @@ footer {
     background: #fce138;
     width: 100%;
     padding: 40px 35px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
 }
 
 footer h2 {
-    display: inline;
     color: #024e76;
     font-size: 30px;
     margin: 0;
 }
 
 footer div {
-    float: right;
     line-height: 1.5;
     text-align: right;
 }
@@ -94,7 +95,7 @@ section {
 
 .hero {
     background-image: url("../images/hero-bg.jpg.jpg");
-    height: 600px;
+
 
     /* The background-size property can set the size of the background image to 
     its original size or make it stretched, repeated, or constrained to fit the
@@ -106,17 +107,24 @@ section {
     /* The background-position property can set the initial position of the 
     background image. We'll set this position to center. */
     background-position: center;
-    position: relative;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+
 }
 
 .hero-cta {
-    /* margin-left: 351px;
+    width: 35%;
     text-align: right;
-    display: inline-block;
-    width: 31%; */
+    margin: 3.5%;
+    color: #fff;
+    font-size: 18px;
+    line-height: 1.3;
 }
 
 .hero-cta h2 {
+    font-style: italic;
+    font-size: 55px;
     color: #fce138;
 }
 
@@ -127,12 +135,12 @@ section {
 .hero-form {
     background-color: #fce138;
     padding: 20px;
-    width: 500px;
+    width: 40%;
+    margin: 3.5%;
     color: #024e76;
     border: solid 3px #024e76;
-    position: absolute;
-    bottom: 120px;
-    right: 140px;
+
+
 }
 
 .hero-form h3 {
