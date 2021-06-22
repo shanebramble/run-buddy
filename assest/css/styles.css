@@ -74,7 +74,7 @@ section {
 }
 
 .hero {
-    background-image: url("../images/hero-bg.jpg");
+    background-image: url("../images/hero-bg.jpg.jpg");
     height: 600px;
 
     /* The background-size property can set the size of the background image to 
@@ -88,6 +88,21 @@ section {
     background image. We'll set this position to center. */
     background-position: center;
     position: relative;
+}
+
+.hero-cta {
+    margin-left: 351px;
+    text-align: right;
+    display: inline-block;
+    width: 31%;
+}
+
+.hero-cta h2 {
+    color: #fce138;
+}
+
+.hero-cta p {
+    color: white;
 }
 
 .hero-form {
@@ -264,6 +279,7 @@ begin at the top of the <div>and start aligned from the left for an easy-to-read
     margin: 30px 0 0 60px;
     color: white;
 }
+
 .contact-info h3 {
     color: #fce138;
     font-size: 32px;
@@ -282,4 +298,3 @@ indicating that the subsequent declaration block will apply to both CSS selector
 .contact-info a {
     color: #fce138;
 }
-
