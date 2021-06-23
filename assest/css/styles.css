@@ -23,6 +23,23 @@ header {
     /* The flex-wrap property to instruct the container to let child elements break 
     onto the next line when when they don't fit on one line. */
     flex-wrap: wrap;
+
+    /* The top property is important because this tells the browser where to "stick"
+    the element. We always want the header to be at the very top of the viewport,
+    so top: 0;makes the most sense. */
+
+    /* Vendor prefix to allow position: sticky in Safari */
+    position: -webkit-sticky;
+    /* The top property is important because this tells the browser where to "stick"
+    the element. We always want the header to be at the very top of the viewport,
+    so top: 0;makes the most sense. */
+    position: sticky;
+    top: 0;
+
+    background-image: url("../images/hero-bg.jpg.jpg");
+    background-size: cover;
+    background-position: 80%;
+    background-attachment: fixed;
 }
 
 header h1 {
@@ -30,6 +47,7 @@ header h1 {
     font-size: 36px;
     color: #fce138;
     margin: 0;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
 header a {
@@ -63,6 +81,14 @@ header nav ul li a {
         that the font's size should be roughly 1.55% of the window's overall width. 
     */
     font-size: 1.55vw;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+header nav ul li a:hover {
+    background: #fce138;
+    color: #024e76;
+    border-radius: 15px;
+    text-shadow: none;
 }
 
 footer {
@@ -106,7 +132,14 @@ section {
     background-size: cover;
     /* The background-position property can set the initial position of the 
     background image. We'll set this position to center. */
-    background-position: center;
+    background-position: 80%;
+
+    /* We need the background images of these two elements to essentially be in the 
+    same place. Fortunately,
+    we can do just that by using the declaration background-attachment: fixed;
+    ,which places the image relative to the viewport instead of the element. */
+
+    background-attachment: fixed;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
@@ -127,6 +160,7 @@ section {
     font-style: italic;
     font-size: 55px;
     color: #fce138;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
 .hero-cta p {
@@ -134,14 +168,14 @@ section {
 }
 
 .hero-form {
-    background-color: #fce138;
+    background-color: rgba(252, 225, 56, 0.8);
     padding: 20px;
     width: 40%;
     margin: 3.5%;
     color: #024e76;
     border: solid 3px #024e76;
-
-
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    border-radius: 15px;
 }
 
 .hero-form h3 {
@@ -161,6 +195,13 @@ section {
     color: #024e76;
     width: 100%;
     margin-bottom: 15px;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.75);
+}
+
+.form-input:focus {
+    background-color: rgba(255, 255, 255, 1);
+    outline: none;
 }
 
 .hero-form label {
@@ -173,6 +214,11 @@ section {
     border: none;
     padding: 10px 20px;
     font-size: 16px;
+    border-radius: 10px;
+}
+
+.hero-form button:hover {
+    background-color: #39a6b2;
 }
 
 /* .intro {
@@ -228,11 +274,16 @@ section {
     margin: 50px auto;
     padding-bottom: 50px;
     width: 80%;
-    border-bottom: 1px solid #39a6b2;
+    
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
+}
+/* This adds a border to every even-numbered child of the <section> */
+.step:not(:last-child)
+{
+    border-bottom: 1px solid #39a6b2;
 }
 
 .step h3 {
@@ -398,6 +449,13 @@ indicating that the subsequent declaration block will apply to both CSS selector
     width: 100%;
     margin-bottom: 15px;
     margin-top: 5px;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.75);
+}
+.contact-form input:focus, .contact-form textarea:focus
+{
+    background-color: rgba(255, 255, 255, 1);
+    outline: none;
 }
 
 .contact-form button {
@@ -408,12 +466,19 @@ indicating that the subsequent declaration block will apply to both CSS selector
     text-align: center;
     padding: 15px 0;
     font-size: 16px;
+    border-radius: 10px;
+}
+
+.contact-form button:hover {
+    color: #fce138;
+    background: #39a6b2;
 }
 
 @media screen and (max-width: 980px) {
     header {
         padding-bottom: 0;
         justify-content: center;
+        position: relative;
     }
 
     header h1 {
@@ -429,6 +494,13 @@ indicating that the subsequent declaration block will apply to both CSS selector
 
     header nav ul li a {
         font-size: 20px;
+    }
+
+    header nav ul li a:hover {
+        background: #fce138;
+        color: #024e76;
+        border-radius: 15px;
+        text-shadow: none;
     }
 
     footer h2,
@@ -463,61 +535,63 @@ indicating that the subsequent declaration block will apply to both CSS selector
     section {
         padding: 30px 15px;
     }
-     section {
-         padding: 30px 15px;
-     }
 
-     .step h3 {
-         flex: 1 100%;
-         text-align: center;
-     }
+    section {
+        padding: 30px 15px;
+    }
 
-     .step-info {
-         flex: 2 100%;
-         text-align: center;
-         justify-content: center;
-     }
+    .step h3 {
+        flex: 1 100%;
+        text-align: center;
+    }
 
-     .step-img {
-         flex: 0 32%;
-         margin-right: 0;
-         margin-top: 15px;
-         margin-bottom: 15px;
-     }
+    .step-info {
+        flex: 2 100%;
+        text-align: center;
+        justify-content: center;
+    }
 
-     .step-text {
-         flex: 100%;
-     }
+    .step-img {
+        flex: 0 32%;
+        margin-right: 0;
+        margin-top: 15px;
+        margin-bottom: 15px;
+    }
+
+    .step-text {
+        flex: 100%;
+    }
 
 }
 
 @media screen and (max-width: 575px) {
-      .hero-form button {
-          width: 100%;
-      }
+    .hero-form button {
+        width: 100%;
+    }
 
-      .section-title {
-          width: 95%;
-      }
+    .section-title {
+        width: 95%;
+    }
 
-      .intro p {
-          width: 100%;
-      }
+    .intro p {
+        width: 100%;
+    }
 
-      .trainer {
-          flex: 0 100%;
-      }
+    .trainer {
+        flex: 0 100%;
+    }
 
-      .contact-info {
-          text-align: center;
-      }
+    .contact-info {
+        text-align: center;
+    }
 
-      .contact-info>* {
-          flex: 0 100%;
-      }
-      /* The order property can be extremely useful in cases like this because it 
+    .contact-info>* {
+        flex: 0 100%;
+    }
+
+    /* The order property can be extremely useful in cases like this because it 
       can rearrange how child elements appear on a page without moving the HTML. */
-      .contact-form {
-          order: 3;
-      }
+    .contact-form {
+        order: 3;
+    }
 }
