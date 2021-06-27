@@ -220,10 +220,11 @@ section {
     top: -4px;
     left: -30px;
 }
-.radio-wrapper label::before
-{
+
+.radio-wrapper label::before {
     border-radius: 50%;
 }
+
 .radio-wrapper label::after {
     content: "";
     width: 20px;
@@ -235,8 +236,8 @@ section {
     top: -3px;
     background-image: radial-gradient(circle, var(--tertiary-color), var(--secondary-color));
 }
-.checkbox-wrapper label::after
-{
+
+.checkbox-wrapper label::after {
     transform: rotate(-58deg);
 }
 
@@ -250,6 +251,7 @@ section {
     left: -26px;
     top: 1px;
 }
+
 .checkbox-wrapper input+label::after,
 .radio-wrapper input+label::after {
     content: none;
@@ -259,6 +261,7 @@ section {
 .radio-wrapper input:checked+label::after {
     content: "";
 }
+
 .form-input {
     border: 1px solid var(--secondary-color);
     display: block;
